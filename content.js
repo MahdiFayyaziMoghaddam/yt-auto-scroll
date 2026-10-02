@@ -9,8 +9,8 @@ function startAutoScroll() {
 		const nextBtn = $$(
 			".ytSpecButtonShapeNextHost.ytSpecButtonShapeNextTonal.ytSpecButtonShapeNextMono.ytSpecButtonShapeNextSizeXl.ytSpecButtonShapeNextIconButton.ytSpecButtonShapeNextEnableBackdropFilterExperiment.ytSpecButtonShapeNextMainstageIconSize.ytSpecButtonShapeNextMainstagePadding"
 		)[1];
-		const vidProgress = parseFloat($(".ytProgressBarLineProgressBarPlayed").style.width || "0%");
-		if (nextBtn && vidProgress >= 98) nextBtn.click();
+		const videoElem = $("video");
+		if (videoElem.currentTime >= +videoElem.duration.toFixed(4)) nextBtn.click();
 	}, 500);
 }
 
